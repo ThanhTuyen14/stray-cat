@@ -1,0 +1,14 @@
+@use "variables" as v;
+.menu-list {
+  .menu-item {
+    padding: 1rem 1.5rem;
+    color: v.$deepRed;
+    &:hover,
+    &:focus {
+      background-color: v.$softPink;
+    }
+    &.active-menu {
+      background-color: v.$electricPink;
+    }
+  }
+}

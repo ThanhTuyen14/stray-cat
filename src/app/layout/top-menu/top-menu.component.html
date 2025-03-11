@@ -1,5 +1,7 @@
 <div class="flex items-center">
-  <ul>
-    <li></li>
+  <ul class="flex items-center gap-x-4 menu-list">
+    @for(item of menus; track item.id) {
+    <li class="menu-item">{{ item.title }}</li>
+    }
   </ul>
 </div>
