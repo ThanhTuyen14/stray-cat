@@ -1,8 +1,7 @@
-@use "src/styles.scss";
+@use "assets/scss/main" as *;
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
