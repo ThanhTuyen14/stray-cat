@@ -1,7 +1,8 @@
-$deepRed: #ac1754;
-$electricPink: #e53888;
-$softPink: #f37199;
-$lightPink: #f7a8c4;
+$deepRed: var(--deep-red);
+$electricPink: var(--electric-pink);
+$softPink: var(--soft-pink);
+$lightPink: var(--light-pink);
+$white: var(--white);
 
 .deepRed {
   color: $deepRed;
@@ -17,6 +18,10 @@ $lightPink: #f7a8c4;
 
 .lightPink {
   color: $lightPink;
+}
+
+.white {
+  color: $white;
 }
 
 .bg-deepRed {

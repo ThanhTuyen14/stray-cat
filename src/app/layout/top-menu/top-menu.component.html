@@ -1,9 +1,42 @@
-<div class="menu-container">
-  <div class="flex items-center">
-    <ul class="flex items-center gap-x-4 menu-list">
-      @for(item of menus; track item.id) {
-      <li class="menu-item">{{ item.title }}</li>
+<div class="menu-container shadow-sm">
+  <div class="flex items-center justify-between px-4 py-2">
+    <!-- Logo section -->
+    <div class="flex items-center">
+      <img src="assets/images/logo.png" alt="Logo" class="h-8 w-auto" />
+    </div>
+
+    <!-- Menu items -->
+    <div class="flex-1 flex justify-center">
+      <ul class="flex items-center gap-x-4 menu-list">
+        @for(item of menus; track item.id) {
+        <li
+          [routerLink]="item.routerLink"
+          routerLinkActive="font-bold active-menu"
+          [class.text-gray-700]="!isActive(item.routerLink)"
+          class="menu-item cursor-pointer"
+        >
+          {{ item.title }}
+        </li>
+        }
+      </ul>
+    </div>
+
+    <!-- User profile -->
+    <div class="flex items-center gap-x-3">
+      @if (userAvatar) {
+      <img
+        [src]="userAvatar"
+        alt="User avatar"
+        class="w-8 h-8 rounded-full object-cover"
+      />
+      } @else {
+      <div
+        class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center"
+      >
+        <span class="text-white text-sm">{{ getUserInitials() }}</span>
+      </div>
       }
-    </ul>
+      <span class="text-gray-700 font-medium">{{ username }}</span>
+    </div>
   </div>
 </div>

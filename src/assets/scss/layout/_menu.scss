@@ -9,8 +9,9 @@
 }
 .menu-list {
   .menu-item {
-    padding: 1rem 1.5rem;
-    color: v.$deepRed;
+    padding: 0.25rem 1.5rem 0.5rem;
+    color: v.$white;
+    border-radius: 0.5rem;
     &:hover,
     &:focus {
       background-color: v.$softPink;

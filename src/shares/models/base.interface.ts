@@ -1,6 +1,6 @@
 export interface IMenu {
-  id: number;
+  id?: number;
   title: string;
   routerLink: string;
-  isActive: boolean;
+  isActive?: boolean;
 }
