@@ -5,7 +5,7 @@ import { TopMenuComponent } from './layout/top-menu/top-menu.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TopMenuComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
