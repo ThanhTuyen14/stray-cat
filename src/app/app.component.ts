@@ -1,11 +1,12 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TopMenuComponent } from './layout/top-menu/top-menu.component';
+import { LeftMenuComponent } from './layout/left-menu/left-menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, LeftMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

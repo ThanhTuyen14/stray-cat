@@ -7,3 +7,7 @@
 @use "forms";
 
 @use "layout/layout";
+
+body {
+  color: var(--paragraph);
+}
