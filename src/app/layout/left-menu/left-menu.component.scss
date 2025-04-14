@@ -46,6 +46,11 @@
         .material-icons {
           margin-right: 0.75rem;
         }
+
+        &.active {
+          background-color: var(--bg-menu-item-hover);
+          font-weight: 600;
+        }
       }
     }
   }

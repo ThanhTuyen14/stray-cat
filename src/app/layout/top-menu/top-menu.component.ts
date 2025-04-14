@@ -14,6 +14,7 @@ export class TopMenuComponent {
     {
       id: 1,
       title: 'Home',
+      icon: 'home',
       routerLink: '/home',
     },
   ];

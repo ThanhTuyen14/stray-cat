@@ -14,18 +14,10 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(TopMenuComponent, { static: false }) topMenu!: TopMenuComponent;
 
   ngAfterViewInit() {
-    // Check immediately
-    this.checkMenuHeight();
-
     // Check after a short delay
     setTimeout(() => {
       this.checkMenuHeight();
     }, 0);
-
-    // Check after a longer delay to ensure everything is rendered
-    setTimeout(() => {
-      this.checkMenuHeight();
-    }, 100);
   }
 
   private checkMenuHeight() {

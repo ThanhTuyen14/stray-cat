@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
+import { IMenu } from '../../../shares/models/base.interface';
 
 @Component({
   selector: 'app-left-menu',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './left-menu.component.html',
   styleUrl: './left-menu.component.scss',
 })
 export class LeftMenuComponent {
-  menuItems = [{ label: 'Home', link: '/home', icon: 'home' }];
+  menuItems: IMenu[] = [{ title: 'Home', routerLink: '/home', icon: 'home' }];
 
   user = {
     name: 'GiGin',
@@ -18,6 +19,8 @@ export class LeftMenuComponent {
 
   showUserMenu = false;
 
+  constructor(private router: Router) {}
+
   toggleUserMenu() {
     this.showUserMenu = !this.showUserMenu;
   }
@@ -25,5 +28,9 @@ export class LeftMenuComponent {
   logout() {
     // Implement logout logic here
     console.log('Logout clicked');
+  }
+
+  isActive(menuItem: { routerLink: string }): boolean {
+    return this.router.url === menuItem.routerLink;
   }
 }
