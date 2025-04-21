@@ -13,40 +13,62 @@
           routerLinkActive="active"
           [class.active]="isActive(item)"
         >
-          <i class="icon" [class]="item.icon"></i>
+          <i class="material-icons">{{ item.icon }}</i>
           {{ item.title }}
         </a>
       </li>
     </ul>
   </nav>
 
-  <!-- Bottom section with user profile -->
+  <!-- Bottom section with user profile or auth options -->
   <div class="user-section">
-    <div
-      class="user-profile"
-      [class.active]="showUserMenu"
-      (click)="toggleUserMenu()"
-    >
-      <!-- <img [src]="user.avatar" alt="User avatar" class="user-avatar" /> -->
-      <span class="user-name">{{ user.name }}</span>
-    </div>
+    <!-- Show this when user is authenticated -->
+    <ng-container *ngIf="isAuthenticated">
+      <div
+        class="user-profile"
+        [class.active]="showUserMenu"
+        (click)="toggleUserMenu()"
+      >
+        <span class="material-icons">person</span>
+        <span class="user-name">{{ user.name }}</span>
+      </div>
 
-    <!-- User menu dropdown -->
-    <div class="user-menu" [class.show]="showUserMenu">
-      <ul>
-        <li>
-          <a routerLink="/account-settings">
-            <span class="material-icons">settings</span>
-            Account Settings
-          </a>
-        </li>
-        <li>
-          <a (click)="logout()">
-            <span class="material-icons">logout</span>
-            Logout
-          </a>
-        </li>
-      </ul>
-    </div>
+      <div class="user-menu" [class.show]="showUserMenu">
+        <ul>
+          <li>
+            <a routerLink="/account-settings">
+              <span class="material-icons">settings</span>
+              Account Settings
+            </a>
+          </li>
+          <li>
+            <a (click)="logout()">
+              <span class="material-icons">logout</span>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+
+    <!-- Show this when user is not authenticated -->
+    <ng-container *ngIf="!isAuthenticated">
+      <div class="auth-buttons">
+        <ul>
+          <li>
+            <a routerLink="/auth/register">
+              <span class="material-icons">person_add</span>
+              Register
+            </a>
+          </li>
+          <li>
+            <a routerLink="/auth/login">
+              <span class="material-icons">login</span>
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
   </div>
 </div>

@@ -1,0 +1,33 @@
+// Common menu item styles
+@mixin menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  color: inherit;
+
+  &:hover {
+    background-color: var(--bg-menu-item-hover);
+  }
+}
+
+// Common icon styles
+@mixin menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+  margin-right: 0.75rem;
+  line-height: 1;
+}
+
+// Common list reset
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

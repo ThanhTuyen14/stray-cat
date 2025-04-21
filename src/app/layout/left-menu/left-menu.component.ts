@@ -12,6 +12,8 @@ import { IMenu } from '../../../shares/models/base.interface';
 export class LeftMenuComponent {
   menuItems: IMenu[] = [{ title: 'Home', routerLink: '/home', icon: 'home' }];
 
+  isAuthenticated = true; // Add authentication state
+
   user = {
     name: 'GiGin',
     avatar: '',
@@ -19,15 +21,19 @@ export class LeftMenuComponent {
 
   showUserMenu = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // TODO: Get actual auth state from your auth service
+    // this.isAuthenticated = this.authService.isAuthenticated();
+  }
 
   toggleUserMenu() {
     this.showUserMenu = !this.showUserMenu;
   }
 
   logout() {
-    // Implement logout logic here
+    // TODO: Implement actual logout logic
     console.log('Logout clicked');
+    this.isAuthenticated = false;
   }
 
   isActive(menuItem: { routerLink: string }): boolean {
